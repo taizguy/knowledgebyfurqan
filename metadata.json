@@ -1,0 +1,6 @@
+{
+  "name": "40,000 Years of Knowledge",
+  "description": "A bilingual digital research archive and knowledge atlas dedicated to historical, scientific, archaeological, and civilizational inquiry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

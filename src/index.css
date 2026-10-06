@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: "Newsreader", "Cormorant Garamond", "EB Garamond", Garamond, Georgia, serif;
+    --font-display: "Cinzel", "Cormorant Garamond", "Newsreader", serif;
+    --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    --font-urdu: "Noto Nastaliq Urdu", "Noto Sans Arabic", serif;
+    --font-arabic: "Noto Sans Arabic", "Noto Nastaliq Urdu", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+
+    /* Restrained Warm Archival Palette */
+    --color-parchment: #FAF8F5;
+    --color-parchment-warm: #F5F1EA;
+    --color-parchment-card: #FFFFFF;
+    --color-parchment-subtle: #F0ECE3;
+    --color-border-archival: #E6E1D6;
+    --color-border-hairline: rgba(26, 25, 24, 0.09);
+
+    --color-charcoal-deep: #1A1918;
+    --color-graphite-muted: #5C5751;
+    --color-graphite-light: #878177;
+
+    --color-indigo-archival: #1E3A5F;
+    --color-gold-aged: #B8934A;
+    --color-gold-deep: #947230;
+  }
+
+  html {
+    color: #1A1918;
+    background-color: #FAF8F5;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: #FAF8F5;
+    color: #1A1918;
+    min-height: 100vh;
+  }
+
+  /* RTL Specific Adjustments for Urdu */
+  [dir="rtl"] {
+    font-family: var(--font-arabic);
+    text-align: right;
+  }
+
+  [dir="rtl"] .font-serif,
+  [dir="rtl"] .font-display {
+    font-family: var(--font-urdu), serif;
+    line-height: 2.1;
+  }
+
+  [dir="rtl"] .font-sans {
+    font-family: var(--font-arabic), sans-serif;
+  }
+
+  /* Paper texture & editorial border classes */
+  .paper-surface {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border-hairline);
+  }
+
+  .paper-subtle {
+    background-color: #F4F0E8;
+    border: 1px solid var(--color-border-hairline);
+  }
+
+  .hairline-b {
+    border-bottom: 1px solid var(--color-border-hairline);
+  }
+
+  .hairline-t {
+    border-top: 1px solid var(--color-border-hairline);
+  }
+
+  .hairline-x {
+    border-left: 1px solid var(--color-border-hairline);
+    border-right: 1px solid var(--color-border-hairline);
+  }
+
+  .hairline {
+    border: 1px solid var(--color-border-hairline);
+  }
+
+  /* Reading prose styles */
+  .editorial-prose {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.85;
+    color: #242220;
+    max-width: 68ch;
+  }
+
+  [dir="rtl"] .editorial-prose {
+    font-family: var(--font-urdu), serif;
+    font-size: 1.25rem;
+    line-height: 2.3;
+    color: #1A1918;
+    max-width: 68ch;
+  }
+
+  /* Tabular figures for numbers */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
